@@ -1,2 +1,2 @@
-# NNPTUD_S5
-Code Hang Tuan
+Code demo về chat socket
+sử dụng nodejs, express
