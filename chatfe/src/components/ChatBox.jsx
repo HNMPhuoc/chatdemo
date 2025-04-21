@@ -9,7 +9,7 @@ const { TextArea } = Input;
 
 // ⚡ Khởi tạo socket ngoài component để chỉ tạo 1 lần
 const socket = io("http://localhost:3000", {
-  withCredentials: true
+    withCredentials: true
 });
 
 export default function ChatBox({ selectedUser }) {
@@ -67,11 +67,11 @@ export default function ChatBox({ selectedUser }) {
                 setMessages((prev) => [...prev, newMessage]);
             }
         });
-    
+
         return () => {
             socket.off('receive_message');
         };
-    }, [selectedUser]);    
+    }, [selectedUser]);
 
     const handleSend = async () => {
         const token = getToken();
@@ -118,11 +118,13 @@ export default function ChatBox({ selectedUser }) {
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: '#fff',
-            borderLeft: '1px solid #f0f0f0'
+            borderLeft: '1px solidrgb(29, 27, 170)',
+            borderStyle: 'solid',
+            borderWidth: '0 1px 0 0',
         }}>
             {/* Header */}
             <div style={{
-                padding: '12px 16px',
+                padding: '10px 16px',
                 borderBottom: '1px solid #eee',
                 display: 'flex',
                 alignItems: 'center',
@@ -143,7 +145,6 @@ export default function ChatBox({ selectedUser }) {
                 overflowY: 'auto',
                 padding: '16px',
                 backgroundColor: '#f5f5f5',
-                minHeight: 500,
             }}>
                 {messages.map((msg, index) => {
                     const isMine = msg.sender === currentUserId.current;
@@ -181,6 +182,7 @@ export default function ChatBox({ selectedUser }) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
+                flexShrink: 0,
             }}>
                 <TextArea
                     value={content}

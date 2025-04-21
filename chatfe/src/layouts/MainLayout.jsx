@@ -32,7 +32,7 @@ export default function MainLayout() {
 
                 {/* Content + Footer */}
                 <Layout style={{ padding: '0 16px', display: 'flex', flexDirection: 'column' }}>
-                    <Content style={{ flex: 1, padding: '24px 0', backgroundColor: '#fff' }}>
+                    <Content style={{ flex: 1, padding: '2px 0', backgroundColor: '#fff' }}>
                         <div ref={chatRef}>
                             <MainContent empty={!selectedUser}>
                                 {selectedUser && <ChatBox selectedUser={selectedUser} />}
